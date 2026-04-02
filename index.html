@@ -1,69 +1,125 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Momentif — 3D Taste Experiment</title>
-  <meta name="description" content="Momentif 3D experimental landing with falling pencil animation and taste-first transformation narrative." />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Momentif — Dynamic Study OS</title>
+  <meta name="description" content="Momentif is a dynamic study OS for students: Canvas sync, adaptive scheduling, flow timers, and clean execution."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css"/>
 </head>
 <body>
-  <div id="webgl"></div>
-  <div class="vignette"></div>
-  <div class="noise"></div>
+  <div class="bg"></div>
   <div class="progress" id="progress"></div>
 
-  <header class="topbar glass">
+  <header class="nav glass" id="topNav">
     <div class="brand">Momentif</div>
     <nav>
-      <a href="#act1">Act I</a>
-      <a href="#act2">Act II</a>
-      <a href="#act3">Act III</a>
+      <a href="#features">Features</a>
+      <a href="#engine">Engine</a>
+      <a href="#proof">Proof</a>
+      <a href="#download">Download</a>
     </nav>
     <a class="btn" href="#download">Get App</a>
   </header>
 
   <main>
-    <section class="panel hero" id="act1">
-      <p class="kicker reveal">3D Narrative Experiment</p>
-      <h1 class="reveal">A pencil drops.<br><span>So does average taste.</span></h1>
-      <p class="lead reveal">This is a full 3D-first build: no static screenshots, just scene-driven motion inspired by high-end parallax storytelling sites.</p>
-      <div class="actions reveal">
-        <a class="btn big" href="#act2">Enter sequence ↓</a>
+    <section class="hero section" id="top">
+      <p class="kicker reveal">Study OS for high school reality</p>
+      <h1 class="reveal">Studying, <span id="heroWord">frictionless</span></h1>
+      <p class="lead reveal">Canvas-aware planning, adaptive study blocks, and focus timers that actually respect your life.</p>
+      <div class="hero-actions reveal">
+        <a class="btn big" href="#download">Download Momentif</a>
+        <a class="ghost" href="#features">See the flow ↓</a>
+      </div>
+
+      <div class="hero-grid">
+        <article class="glass stat reveal">
+          <strong id="countA">0</strong>
+          <span>calendar conflicts</span>
+        </article>
+        <article class="glass stat reveal">
+          <strong id="countB">0</strong>
+          <span>deadlines hidden</span>
+        </article>
+        <article class="glass stat reveal">
+          <strong id="countC">0</strong>
+          <span>minutes to first plan</span>
+        </article>
       </div>
     </section>
 
-    <section class="panel" id="act2">
-      <p class="kicker reveal">Act I · No Taste</p>
-      <h2 class="reveal">Looks polished.<br>Feels empty.</h2>
-      <p class="reveal">As the pencil falls, the page drifts through the “safe-good” zone: generic, clean, forgettable. This is what we reject.</p>
-      <div class="chips reveal">
-        <span>Template energy</span><span>Predictable hierarchy</span><span>No emotional signature</span>
+    <section class="section" id="features">
+      <div class="head reveal">
+        <p class="kicker">Core features</p>
+        <h2>Built for how students actually work</h2>
+      </div>
+
+      <div class="cards">
+        <article class="card glass reveal tilt">
+          <h3>Canvas Connection</h3>
+          <p>Assignments and due dates sync in directly. No manual copy loop.</p>
+          <ul>
+            <li>Course-level context</li>
+            <li>Live due-date ingestion</li>
+            <li>Single source of truth</li>
+          </ul>
+        </article>
+        <article class="card glass reveal tilt">
+          <h3>Adaptive Scheduling</h3>
+          <p>Auto-generated study blocks based on real free windows and urgency.</p>
+          <ul>
+            <li>Conflict-free placement</li>
+            <li>Load balancing on hard days</li>
+            <li>Deadline-aware priority</li>
+          </ul>
+        </article>
+        <article class="card glass reveal tilt">
+          <h3>Flow Timers</h3>
+          <p>Focus sprints + breaks to keep consistency high and burnout low.</p>
+          <ul>
+            <li>Session rhythm presets</li>
+            <li>Recovery prompts</li>
+            <li>Momentum-first UX</li>
+          </ul>
+        </article>
       </div>
     </section>
 
-    <section class="panel" id="act3">
-      <p class="kicker reveal">Act II · Judgment</p>
-      <h2 class="reveal">Cut the noise.<br>Keep only signal.</h2>
-      <p class="reveal">The pencil stabilizes, rotates into intent, and draws a controlled line. Same tools, better curation, sharper outcome.</p>
-      <div class="chips reveal">
-        <span>Selection > addition</span><span>Distinctiveness</span><span>Taste as moat</span>
+    <section class="section engine" id="engine">
+      <div class="engine-copy reveal">
+        <p class="kicker">Dynamic engine</p>
+        <h2>One input. Clear execution.</h2>
+        <p>Give Momentif your constraints and deadlines. It resolves the week into action without making you babysit the plan.</p>
+      </div>
+      <div class="terminal glass reveal" id="terminalCard" aria-live="polite">
+        <p class="term-title">momentif/plan.run</p>
+        <div class="term-lines" id="termLines"></div>
       </div>
     </section>
 
-    <section class="panel finale" id="download">
-      <p class="kicker reveal">Act III · Momentif</p>
-      <h2 class="reveal">Now shift into warmth</h2>
-      <p class="reveal">The end state resolves into Momentif’s warm brand palette: calm, intentional, and human.</p>
-      <a class="btn big reveal" href="#">Download Momentif</a>
+    <section class="section" id="proof">
+      <div class="head reveal">
+        <p class="kicker">Taste check</p>
+        <h2>Not template SaaS. Distinct and intentional.</h2>
+      </div>
+      <div class="proof-grid">
+        <article class="proof glass reveal"><h4>Hierarchy</h4><p>You always know where to look first.</p></article>
+        <article class="proof glass reveal"><h4>Motion</h4><p>Animation clarifies state, not just decoration.</p></article>
+        <article class="proof glass reveal"><h4>Voice</h4><p>Direct copy, no generic corporate filler.</p></article>
+      </div>
+    </section>
+
+    <section class="section finale" id="download">
+      <p class="kicker reveal">Download</p>
+      <h2 class="reveal">Ready to make school feel lighter?</h2>
+      <p class="reveal">Momentif turns overload into a schedule you can actually execute.</p>
+      <a class="btn big reveal" href="#">Download Now</a>
     </section>
   </main>
 
-  <div class="floating-label" id="tasteLabel">NO TASTE</div>
-
-  <script type="module" src="./script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
