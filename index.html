@@ -3,106 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Momentif — Experimental Cinematic Landing</title>
-  <meta name="description" content="Momentif experimental cinematic web experience with aggressive parallax, glass UI, and kinetic scroll scenes." />
+  <title>Momentif — Liquid Glass Edition</title>
+  <meta name="description" content="Momentif experimental liquid-glass dark tech SaaS landing with anime.js motion and final brand-color transition." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="scroll-progress"></div>
-  <div class="noise"></div>
+  <div class="bg-noise"></div>
+  <div class="bg-gradient"></div>
+  <div class="scroll-progress" id="progress"></div>
 
-  <header class="topbar glass">
+  <header class="topbar glass" id="topbar">
     <div class="brand">Momentif</div>
     <nav>
-      <a href="#experience">Experience</a>
-      <a href="#systems">Systems</a>
+      <a href="#features">Features</a>
+      <a href="#engine">Engine</a>
       <a href="#download">Download</a>
     </nav>
     <a class="btn" href="#download">Get App</a>
   </header>
 
   <main>
-    <section class="hero">
-      <video class="hero-video" autoplay muted loop playsinline preload="auto">
-        <source src="https://cdn.coverr.co/videos/coverr-hands-on-laptop-typing-1579/1080p.mp4" type="video/mp4">
-      </video>
-      <div class="hero-overlay"></div>
+    <section class="hero section" id="hero">
+      <div class="liquid blob b1"></div>
+      <div class="liquid blob b2"></div>
+      <div class="liquid blob b3"></div>
 
-      <div class="hero-content">
-        <p class="eyebrow reveal">Momentif iOS · Experimental Web Story</p>
-        <h1 class="reveal">Studying, <span>Unfairly Smooth</span></h1>
-        <p class="lede reveal">Same Momentif DNA. But pushed hard: cinematic scroll, depth-stacked phone scenes, glass layers, and kinetic transitions.</p>
+      <div class="hero-copy">
+        <p class="kicker reveal">Momentif · Liquid Glass Build</p>
+        <h1 class="reveal">Study OS for people<br><span>who hate friction</span></h1>
+        <p class="lead reveal">Dark, sharp, and fast. Momentif syncs Canvas, maps real availability, and turns chaos into a clean execution plan.</p>
         <div class="hero-actions reveal">
           <a class="btn large" href="#download">Download Momentif</a>
-          <a class="ghost" href="#experience">Enter the experience ↓</a>
+          <a class="ghost" href="#features">Watch it flow ↓</a>
         </div>
       </div>
 
-      <div class="orb orb-a" data-speed="0.12"></div>
-      <div class="orb orb-b" data-speed="0.22"></div>
-      <div class="orb orb-c" data-speed="0.16"></div>
+      <div class="hero-stack" id="heroStack">
+        <img class="phone p1" src="https://momentif.figma.site/_assets/v11/1a165aeb5ef6950b5b990e01df19d0abecc2bf0f.png" alt="Momentif screen 1" />
+        <img class="phone p2" src="https://momentif.figma.site/_assets/v11/67ebcb3c83dbf203ec364856e252ae3f2806f434.png" alt="Momentif screen 2" />
+        <img class="phone p3" src="https://momentif.figma.site/_assets/v11/a149e2ba8b51ca6ca2e2ddc786c5b255129def81.png" alt="Momentif screen 3" />
+      </div>
     </section>
 
-    <section id="experience" class="story section">
+    <section id="features" class="section">
       <div class="section-head reveal">
-        <p class="eyebrow">Taste Mode</p>
-        <h2>Execution is cheap.<br>Judgment is expensive.</h2>
+        <p class="kicker">Core systems</p>
+        <h2>Same components, upgraded delivery</h2>
       </div>
 
-      <div class="sticky-stage" id="stickyStage">
-        <article class="float-card glass tilt" data-index="0">
-          <h3>Canvas Sync</h3>
-          <p>Assignments and deadlines pulled in automatically. No copy/paste planner grind.</p>
+      <div class="grid-cards">
+        <article class="card glass reveal">
+          <h3>Canvas Connection</h3>
+          <p>Assignments, deadlines, and context sync directly from school systems. No repetitive setup tax.</p>
+          <span class="chip">Real-time aware</span>
         </article>
-        <article class="float-card glass tilt" data-index="1">
-          <h3>Adaptive Blocks</h3>
-          <p>Workload flexes around your real week so hard days don’t become impossible days.</p>
+        <article class="card glass reveal">
+          <h3>Adaptive Scheduling</h3>
+          <p>Plans around your actual availability. Busy days compress intelligently, low-load days absorb prep.</p>
+          <span class="chip">Conflict-free</span>
         </article>
-        <article class="float-card glass tilt" data-index="2">
+        <article class="card glass reveal">
           <h3>Flow Timers</h3>
-          <p>Focus intervals and recovery rhythm so you stay sharp without burnout spikes.</p>
+          <p>Focus sprint logic with recovery cadence so output stays high and burnout stays low.</p>
+          <span class="chip">Energy-first</span>
         </article>
       </div>
     </section>
 
-    <section id="systems" class="systems section">
-      <div class="phones-wrap" id="phonesWrap">
-        <img class="phone layer1" data-speed="0.09" src="https://momentif.figma.site/_assets/v11/1a165aeb5ef6950b5b990e01df19d0abecc2bf0f.png" alt="Momentif app screen 1">
-        <img class="phone layer2" data-speed="0.14" src="https://momentif.figma.site/_assets/v11/67ebcb3c83dbf203ec364856e252ae3f2806f434.png" alt="Momentif app screen 2">
-        <img class="phone layer3" data-speed="0.2" src="https://momentif.figma.site/_assets/v11/a149e2ba8b51ca6ca2e2ddc786c5b255129def81.png" alt="Momentif app screen 3">
-        <img class="phone layer4" data-speed="0.26" src="https://momentif.figma.site/_assets/v11/b1fdd5a7d61615084d10ddc5ca59af5418ca1724.png" alt="Momentif app screen 4">
-
-        <div class="glass-pill pill-a" data-speed="0.13">Conflict-Free Calendar</div>
-        <div class="glass-pill pill-b" data-speed="0.18">Deadline-Aware Prioritization</div>
-        <div class="glass-pill pill-c" data-speed="0.11">Flow-State Sessions</div>
+    <section id="engine" class="section engine">
+      <div class="engine-left">
+        <h2 class="reveal">Built like a product,<br>not a planner template</h2>
+        <p class="reveal">Fast input, clear ranking, automatic block generation. Every piece has purpose and every screen is tuned for speed.</p>
+        <div class="metrics reveal">
+          <div class="metric glass"><strong>2m</strong><span>to first schedule</span></div>
+          <div class="metric glass"><strong>0</strong><span>calendar conflicts</span></div>
+          <div class="metric glass"><strong>100%</strong><span>deadline visibility</span></div>
+        </div>
       </div>
-
-      <div class="systems-copy reveal">
-        <p class="eyebrow">Core Components, Reframed</p>
-        <h2>Same product primitives.<br>Way more cinematic delivery.</h2>
-        <p>Kept the warm serif identity and core Momentif structure, then amplified depth, contrast, movement, and spatial rhythm.</p>
+      <div class="engine-right glass reveal" id="timelinePanel">
+        <p class="timeline-title">Smart Session Timeline</p>
+        <div class="timeline">
+          <div class="dot"><span>Math</span><time>7:00 PM</time></div>
+          <div class="dot"><span>Bio Review</span><time>8:00 PM</time></div>
+          <div class="dot"><span>Spanish</span><time>8:45 PM</time></div>
+          <div class="dot"><span>Break + Reset</span><time>9:30 PM</time></div>
+        </div>
       </div>
     </section>
 
-    <section class="video-break">
-      <video autoplay muted loop playsinline preload="auto">
-        <source src="https://cdn.coverr.co/videos/coverr-student-writing-notes-1571575932483/1080p.mp4" type="video/mp4">
-      </video>
-      <div class="video-mask"></div>
-      <h2 class="reveal">From static landing page<br>to scroll performance.</h2>
+    <section class="transition section" id="warmTransition">
+      <div class="transition-card glass reveal">
+        <p class="kicker">Brand handoff</p>
+        <h2>Now shift into Momentif warmth</h2>
+        <p>Dark liquid-glass up top for impact. Then the landing resolves into the familiar Momentif palette at the close.</p>
+      </div>
     </section>
 
-    <section id="download" class="cta section glass reveal">
-      <p class="eyebrow">Ready</p>
-      <h2>Want the fully insane v2?<br>I can push it further.</h2>
-      <p>Next pass can add scene-by-scene scroll choreography, custom SVG distortion, and app-store-ready production polish.</p>
+    <section id="download" class="section finale reveal">
+      <p class="kicker">Download</p>
+      <h2>Ready to make school feel lighter?</h2>
+      <p>Momentif keeps your workload clear, your calendar clean, and your focus sessions intentional.</p>
       <a class="btn large" href="#">Download Now</a>
     </section>
   </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>
