@@ -1,79 +1,77 @@
 const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 
+const heroWord = $('#hero-word');
 const progress = $('#progress');
-const heroWord = $('#heroWord');
-const countA = $('#countA');
-const countB = $('#countB');
-const countC = $('#countC');
-const termLines = $('#termLines');
-const warmTarget = $('#download');
+const term = $('#terminal-lines');
 
-const words = ['frictionless', 'adaptive', 'focused', 'deadline-safe'];
-let wordIndex = 0;
+const words = ['frictionless.', 'adaptive.', 'deadline-safe.', 'focused.'];
+let w = 0;
 setInterval(() => {
-  wordIndex = (wordIndex + 1) % words.length;
-  heroWord.style.opacity = '0.2';
+  w = (w + 1) % words.length;
+  heroWord.style.opacity = '0.25';
   setTimeout(() => {
-    heroWord.textContent = words[wordIndex];
+    heroWord.textContent = words[w];
     heroWord.style.opacity = '1';
-  }, 170);
-}, 1800);
+  }, 130);
+}, 1700);
 
-function animateCount(el, target, duration = 1400) {
+const targets = [
+  { el: $('#s1'), value: 0, duration: 700 },
+  { el: $('#s2'), value: 0, duration: 700 },
+  { el: $('#s3'), value: 2, duration: 1200 },
+];
+
+let countsRun = false;
+function animateCount(el, value, duration) {
   const start = performance.now();
-  const from = 0;
-  function frame(now) {
+  function step(now) {
     const p = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - p, 3);
-    const val = Math.round(from + (target - from) * eased);
-    el.textContent = String(val);
-    if (p < 1) requestAnimationFrame(frame);
+    el.textContent = Math.round(eased * value).toString();
+    if (p < 1) requestAnimationFrame(step);
   }
-  requestAnimationFrame(frame);
+  requestAnimationFrame(step);
 }
 
-let countsStarted = false;
-const heroObserver = new IntersectionObserver((entries) => {
+const heroObs = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting && !countsStarted) {
-      countsStarted = true;
-      animateCount(countA, 0, 600);
-      animateCount(countB, 0, 600);
-      animateCount(countC, 2, 1200);
+    if (entry.isIntersecting && !countsRun) {
+      countsRun = true;
+      targets.forEach((t) => animateCount(t.el, t.value, t.duration));
     }
   });
 }, { threshold: 0.4 });
-heroObserver.observe($('#top'));
+heroObs.observe($('#top'));
 
 const lines = [
-  '> ingest canvas assignments',
-  '> read calendar conflicts',
-  '> compute urgency weights',
-  '> allocate study blocks',
-  '> insert focus timers',
-  '> output: executable week plan'
+  '> ingest Canvas assignments',
+  '> map deadline urgency weights',
+  '> fetch calendar availability',
+  '> allocate conflict-free blocks',
+  '> attach flow timer cadence',
+  '> output: executable weekly plan'
 ];
-let lineIdx = 0;
-function typeLoop() {
-  if (!termLines) return;
-  termLines.innerHTML = '';
-  let i = 0;
-  const tick = () => {
-    if (i <= lineIdx) {
-      termLines.innerHTML += `${lines[i]}\n`;
-      i++;
-      setTimeout(tick, 120);
-    } else {
-      lineIdx = (lineIdx + 1) % lines.length;
-      setTimeout(typeLoop, 900);
-    }
-  };
-  tick();
-}
-typeLoop();
 
-const revealEls = $$('.reveal');
+let idx = 0;
+function loopTerm() {
+  term.textContent = '';
+  let i = 0;
+  function write() {
+    if (i <= idx) {
+      term.textContent += `${lines[i]}\n`;
+      i++;
+      setTimeout(write, 115);
+    } else {
+      idx = (idx + 1) % lines.length;
+      setTimeout(loopTerm, 900);
+    }
+  }
+  write();
+}
+loopTerm();
+
+const reveals = $$('.reveal');
 const io = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -81,26 +79,18 @@ const io = new IntersectionObserver((entries) => {
       io.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-revealEls.forEach((el) => io.observe(el));
+}, { threshold: 0.14, rootMargin: '0px 0px -10% 0px' });
+reveals.forEach((r) => io.observe(r));
 
-function onScroll() {
+function scrollLoop() {
   const y = window.scrollY;
   const max = document.documentElement.scrollHeight - window.innerHeight;
   const p = max > 0 ? y / max : 0;
   progress.style.width = `${(p * 100).toFixed(2)}%`;
-
-  if (warmTarget.getBoundingClientRect().top < window.innerHeight * 0.72) {
-    document.body.classList.add('warm');
-  } else {
-    document.body.classList.remove('warm');
-  }
-
-  requestAnimationFrame(onScroll);
+  requestAnimationFrame(scrollLoop);
 }
-requestAnimationFrame(onScroll);
+requestAnimationFrame(scrollLoop);
 
-// subtle tilt on feature cards
 $$('.tilt').forEach((card) => {
   card.addEventListener('mousemove', (e) => {
     const r = card.getBoundingClientRect();

@@ -1,121 +1,125 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Momentif — Dynamic Study OS</title>
-  <meta name="description" content="Momentif is a dynamic study OS for students: Canvas sync, adaptive scheduling, flow timers, and clean execution."/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momentif — Adaptive Study OS</title>
+  <meta name="description" content="Momentif is an adaptive study OS for students. Sync Canvas, generate conflict-free study plans, and execute with flow timers." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <div class="bg"></div>
+  <div class="noise"></div>
   <div class="progress" id="progress"></div>
 
-  <header class="nav glass" id="topNav">
-    <div class="brand">Momentif</div>
+  <header class="nav glass">
+    <a class="brand" href="#top">Momentif</a>
     <nav>
-      <a href="#features">Features</a>
-      <a href="#engine">Engine</a>
-      <a href="#proof">Proof</a>
+      <a href="#how">How it works</a>
+      <a href="#use-cases">Use cases</a>
+      <a href="#objections">FAQ</a>
       <a href="#download">Download</a>
     </nav>
-    <a class="btn" href="#download">Get App</a>
+    <a class="btn" href="#download">Get Momentif</a>
   </header>
 
-  <main>
-    <section class="hero section" id="top">
-      <p class="kicker reveal">Study OS for high school reality</p>
-      <h1 class="reveal">Studying, <span id="heroWord">frictionless</span></h1>
-      <p class="lead reveal">Canvas-aware planning, adaptive study blocks, and focus timers that actually respect your life.</p>
+  <main id="top">
+    <section class="hero section">
+      <p class="eyebrow reveal">Built for students juggling real deadlines</p>
+      <h1 class="reveal">Plan less. <span id="hero-word">Study better.</span></h1>
+      <p class="lead reveal">Momentif syncs Canvas, reads your real availability, and builds a conflict-free study plan in minutes using our Adaptive Load Engine.</p>
       <div class="hero-actions reveal">
-        <a class="btn big" href="#download">Download Momentif</a>
-        <a class="ghost" href="#features">See the flow ↓</a>
+        <a class="btn big" href="#download">Download Now</a>
+        <a class="ghost" href="#how">Watch the system ↓</a>
       </div>
 
-      <div class="hero-grid">
+      <div class="hero-proof">
         <article class="glass stat reveal">
-          <strong id="countA">0</strong>
-          <span>calendar conflicts</span>
+          <strong id="s1">0</strong>
+          <span>calendar collisions in generated plans</span>
         </article>
         <article class="glass stat reveal">
-          <strong id="countB">0</strong>
-          <span>deadlines hidden</span>
+          <strong id="s2">0</strong>
+          <span>deadlines hidden from view</span>
         </article>
         <article class="glass stat reveal">
-          <strong id="countC">0</strong>
-          <span>minutes to first plan</span>
+          <strong id="s3">0</strong>
+          <span>minutes to first weekly plan</span>
         </article>
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section trust">
+      <p class="eyebrow reveal">Proof, not vague promises</p>
+      <div class="trust-grid">
+        <article class="glass reveal"><h3>Mechanism</h3><p>Adaptive Load Engine dynamically balances heavy and light days based on due dates and free windows.</p></article>
+        <article class="glass reveal"><h3>Input sources</h3><p>Canvas assignments + calendar constraints + your study preferences.</p></article>
+        <article class="glass reveal"><h3>Output</h3><p>An executable weekly plan with timed study blocks and break-aware flow sessions.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="how">
       <div class="head reveal">
-        <p class="kicker">Core features</p>
-        <h2>Built for how students actually work</h2>
+        <p class="eyebrow">How it works</p>
+        <h2>From chaos to execution in 3 steps</h2>
       </div>
 
-      <div class="cards">
-        <article class="card glass reveal tilt">
-          <h3>Canvas Connection</h3>
-          <p>Assignments and due dates sync in directly. No manual copy loop.</p>
-          <ul>
-            <li>Course-level context</li>
-            <li>Live due-date ingestion</li>
-            <li>Single source of truth</li>
-          </ul>
+      <div class="how-grid">
+        <article class="step glass reveal tilt">
+          <span class="n">01</span>
+          <h3>Ingest</h3>
+          <p>Pull assignments and due dates from Canvas automatically.</p>
         </article>
-        <article class="card glass reveal tilt">
-          <h3>Adaptive Scheduling</h3>
-          <p>Auto-generated study blocks based on real free windows and urgency.</p>
-          <ul>
-            <li>Conflict-free placement</li>
-            <li>Load balancing on hard days</li>
-            <li>Deadline-aware priority</li>
-          </ul>
+        <article class="step glass reveal tilt">
+          <span class="n">02</span>
+          <h3>Resolve</h3>
+          <p>Map deadlines against real availability and remove conflicts.</p>
         </article>
-        <article class="card glass reveal tilt">
-          <h3>Flow Timers</h3>
-          <p>Focus sprints + breaks to keep consistency high and burnout low.</p>
-          <ul>
-            <li>Session rhythm presets</li>
-            <li>Recovery prompts</li>
-            <li>Momentum-first UX</li>
-          </ul>
+        <article class="step glass reveal tilt">
+          <span class="n">03</span>
+          <h3>Execute</h3>
+          <p>Run sessions with Flow Timers and track progress without context switching.</p>
         </article>
       </div>
-    </section>
 
-    <section class="section engine" id="engine">
-      <div class="engine-copy reveal">
-        <p class="kicker">Dynamic engine</p>
-        <h2>One input. Clear execution.</h2>
-        <p>Give Momentif your constraints and deadlines. It resolves the week into action without making you babysit the plan.</p>
-      </div>
-      <div class="terminal glass reveal" id="terminalCard" aria-live="polite">
+      <div class="terminal glass reveal" aria-live="polite">
         <p class="term-title">momentif/plan.run</p>
-        <div class="term-lines" id="termLines"></div>
+        <pre id="terminal-lines"></pre>
       </div>
     </section>
 
-    <section class="section" id="proof">
+    <section class="section" id="use-cases">
       <div class="head reveal">
-        <p class="kicker">Taste check</p>
-        <h2>Not template SaaS. Distinct and intentional.</h2>
+        <p class="eyebrow">Who it’s for</p>
+        <h2>Best for students with dense schedules</h2>
       </div>
-      <div class="proof-grid">
-        <article class="proof glass reveal"><h4>Hierarchy</h4><p>You always know where to look first.</p></article>
-        <article class="proof glass reveal"><h4>Motion</h4><p>Animation clarifies state, not just decoration.</p></article>
-        <article class="proof glass reveal"><h4>Voice</h4><p>Direct copy, no generic corporate filler.</p></article>
+      <div class="use-grid">
+        <article class="glass reveal"><h3>High school workload</h3><p>Multiple classes, staggered due dates, limited free windows.</p></article>
+        <article class="glass reveal"><h3>Exam weeks</h3><p>Auto-prioritized revision blocks without manual re-planning every day.</p></article>
+        <article class="glass reveal"><h3>Athletes / clubs</h3><p>Schedules that respect non-academic commitments and commute time.</p></article>
+      </div>
+      <p class="not-for reveal">Not ideal for students who prefer fully manual planning and no automation.</p>
+    </section>
+
+    <section class="section" id="objections">
+      <div class="head reveal">
+        <p class="eyebrow">Objection handling</p>
+        <h2>Questions you’d ask before trusting it</h2>
+      </div>
+      <div class="faq">
+        <article class="glass reveal"><h3>Will it conflict with my calendar?</h3><p>No—generated blocks are placed only in free windows.</p></article>
+        <article class="glass reveal"><h3>Can I override the plan?</h3><p>Yes. You can move blocks and the system rebalances the rest.</p></article>
+        <article class="glass reveal"><h3>Does it only work for one class style?</h3><p>No. It handles mixed deadlines, labs, reading-heavy and problem-set-heavy courses.</p></article>
       </div>
     </section>
 
     <section class="section finale" id="download">
-      <p class="kicker reveal">Download</p>
+      <p class="eyebrow reveal">Download</p>
       <h2 class="reveal">Ready to make school feel lighter?</h2>
-      <p class="reveal">Momentif turns overload into a schedule you can actually execute.</p>
+      <p class="reveal">Momentif gives you a clear plan you can execute, not just another planner you have to maintain.</p>
       <a class="btn big reveal" href="#">Download Now</a>
     </section>
   </main>
